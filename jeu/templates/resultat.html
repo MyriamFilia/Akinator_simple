@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Akinator - Résultat</title>
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+            body {
+                background-image: url(/static/images/bg.webp);
+                background-repeat: no-repeat;
+                background-size: cover;
+                height: 100vh;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                font-family: Arial, sans-serif;
+            }
+            .top {
+                height: 20vh;
+                width: 100%;
+                background-color: rgb(113, 160, 213);
+                opacity: 90%;
+            }
+            .middle {
+                flex-grow: 1;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                background-color: white;
+                opacity: 95%;
+                padding: 20px;
+                border-radius: 20px;
+                margin: 20px;
+            }
+            .showimg {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin-bottom: 20px;
+            }
+            .showimg img {
+                max-height: 20rem;
+                max-width: 100%;
+                border-radius: 10px;
+            }
+            .dname {
+                text-align: center;
+            }
+            .dname h2 {
+                margin-bottom: 20px;
+            }
+            .dname a {
+                display: inline-block;
+                padding: 10px 20px;
+                background-color: rgb(113, 160, 213);
+                color: white;
+                text-decoration: none;
+                border-radius: 10px;
+                transition: background-color 0.3s ease;
+            }
+            .dname a:hover {
+                background-color: rgb(37, 89, 148);
+            }
+            .bottom {
+                height: 20vh;
+                width: 100%;
+                background-color: rgb(113, 160, 213);
+                opacity: 90%;
+                display: flex;
+                justify-content: center; /* Centers the content horizontally */
+                align-items: center; /* Centers the content vertically */
+            }
+            .bottom a {
+                padding: 15px 30px;
+                font-size: 1.2rem;
+                border-radius: 20px;
+                text-transform: uppercase;
+                background-color: rgb(113, 160, 213);
+                color: white;
+                text-decoration: none;
+                transition: background-color 0.3s ease, transform 0.3s ease;
+            }
+            .bottom a:hover {
+                background-color: rgb(37, 89, 148);
+                transform: scale(1.1); /* Adds a nice hover effect */
+            }
+        </style>
+    </head>
+    <body>
+        <div class="top"></div>
+        <div class="middle">
+            <div class="showimg">
+                <img id="imag1" src="/static/poses/p3.png" alt="Génie">
+            </div>
+            <div class="dname">
+                <p style="text-align: center;">{{ nom }}</p>
+            </div>
+        </div>
+        <div class="bottom">
+            <a href="{% url 'reinitialiser' %}">Recommencer</a>
+        </div>
+    </body>
+</html>

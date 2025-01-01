@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
+    <title>Akinator</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            background-image: url(/static/images/bg.webp);
+            background-repeat: no-repeat;
+            background-size: cover;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            font-family: 'Poppins', sans-serif;
+        }
+        .top {
+            opacity: 90%;
+            height: 20vh;
+            width: 100%;
+            background-color: rgb(113, 160, 213);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .top img {
+            width: 20%;
+        }
+        .middle {
+            flex-grow: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: rgb(140, 162, 188);
+            opacity: 95%;
+        }
+        .middle img {
+            max-width: 100%;
+            height: auto;
+        }
+        .dialogue {
+            margin-left: 8%;
+            text-align: center;
+            background: #fff;
+            padding: 20px;
+            border: 2px solid black;
+            border-radius: 20px;
+        }
+        .select {
+            color: rgb(68, 87, 68);
+            font-size: 2vh;
+        }
+        .themes {
+            margin-top: 20px;
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+        li {
+            font-size: 3vh;
+            margin: 10px 0;
+        }
+        a {
+            text-decoration: none;
+            color: rgb(36, 57, 36);
+        }
+        .item {
+            background-color: #fff;
+            border: 2px solid gray;
+            padding: 10px;
+            border-radius: 20px;
+            transition: all 0.3s ease;
+        }
+        .item:hover {
+            border-color: rgb(45, 70, 45);
+        }
+        .bottom {
+            opacity: 90%;
+            height: 20vh;
+            background-color: rgb(113, 160, 213);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="top">
+        <img src="/static/images/pngwing.com.png" alt="Logo">
+    </div>
+    <div class="middle">
+        <div class="genie">
+            <img src="/static/images/Daco_3267988.png" alt="Génie">
+        </div>
+        <div class="dialogue">
+            <div class="select"><p>Sélectionnez la thématique du jeu</p></div>
+            <div class="themes">
+                <ul>
+                    <div class="item"><li><a href="{% url 'jeu_akinator' theme='personnages' %}">Personnages</a></li></div>
+                    <div class="item"><li><a href="{% url 'jeu_akinator' theme='objets' %}">Objets</a></li></div>
+                    <div class="item"><li><a href="{% url 'jeu_akinator' theme='animaux' %}">Animaux</a></li></div>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="bottom"></div>
+</body>
+</html>
